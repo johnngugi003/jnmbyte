@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Jnm Byte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        * { 
+            font-family: 'Inter', sans-serif; 
+        }
+        
+        .text-gradient { 
+            background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            background-clip: text; 
+        }
+        
+        .cyber-card { 
+            background: rgba(17, 24, 39, 0.85); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(79, 70, 229, 0.4); 
+        }
+        
+        .glow { 
+            box-shadow: 0 0 25px rgba(79, 70, 229, 0.3); 
+        }
+        
+        .cyber-card:hover {
+            box-shadow: 0 0 35px rgba(79, 70, 229, 0.5);
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+        
+        /* Background sections */
+        .contact-hero-bg {
+            background-image: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.7)), 
+                              url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .contact-form-bg {
+            background-image: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.85)), 
+                              url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .text-shadow-lg {
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+        }
+        
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Form enhancements */
+        .form-input {
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+        
+        /* Contact method cards */
+        .contact-method {
+            transition: all 0.3s ease;
+        }
+        
+        .contact-method:hover {
+            background: rgba(79, 70, 229, 0.1);
+            border-color: rgba(79, 70, 229, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-20 h-19 bg-gradient rounded-lg flex items-center justify-center glow">
+                        <img src="wolf.png" alt="Jnm Byte - Cybersecurity & AI Solutions" class="w-20 h-19 rounded-lg" onclick="window.location.href='index.html'">
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold text-white text-shadow">Jnm Byte</span>
+                        <p class="text-xs text-gray-400 text-shadow">Cybersecurity & Software Solutions</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-indigo-400 font-medium transition-colors duration-200 text-shadow">Home</a>
+                    <a href="about.html" class="text-gray-300 hover:text-indigo-400 font-medium transition-colors duration-200 text-shadow">About</a>
+                    <a href="services.html" class="text-gray-300 hover:text-indigo-400 font-medium transition-colors duration-200 text-shadow">Services</a>
+                    <a href="case-studies.html" class="text-gray-300 hover:text-indigo-400 font-medium transition-colors duration-200 text-shadow">Case Studies</a>
+                    <a href="careers.html" class="text-gray-300 hover:text-indigo-400 font-medium transition-colors duration-200 text-shadow">Careers</a>
+                    <a href="contact.html" class="text-indigo-400 font-medium text-shadow">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden p-2">
+                    <i data-lucide="menu" class="h-6 w-6 text-white"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="mobile-menu md:hidden cyber-card border border-gray-600 mt-4">
+                <div class="px-6 py-4 space-y-4">
+                    <a href="index.html" class="block text-gray-300 hover:text-indigo-400 font-medium py-2 text-shadow">Home</a>
+                    <a href="about.html" class="block text-gray-300 hover:text-indigo-400 font-medium py-2 text-shadow">About</a>
+                    <a href="services.html" class="block text-gray-300 hover:text-indigo-400 font-medium py-2 text-shadow">Services</a>
+                    <a href="case-studies.html" class="block text-gray-300 hover:text-indigo-400 font-medium py-2 text-shadow">Case Studies</a>
+                    <a href="careers.html" class="block text-gray-300 hover:text-indigo-400 font-medium py-2 text-shadow">Careers</a>
+                    <a href="contact.html" class="block text-indigo-400 font-medium py-2 text-shadow">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-40 pb-40 contact-hero-bg">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 text-shadow-lg">Get In <span class="text-gradient">Touch</span></h1>
+                <p class="text-xl text-gray-200 text-shadow">Ready to secure your digital future? Let's start a conversation about your cybersecurity and AI needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 contact-form-bg">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div class="cyber-card p-8 rounded-2xl glow">
+                        <h3 class="text-2xl font-bold text-white mb-6 text-shadow">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4 contact-method p-4 rounded-lg border border-gray-600">
+                                <div class="w-12 h-12 bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg flex items-center justify-center animate-float">
+                                    <i data-lucide="mail" class="h-6 w-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-semibold text-shadow">Email Us</h4>
+                                    <p class="text-gray-300 text-shadow">contact@jnmbyte.com</p>
+                                    <p class="text-gray-400 text-sm text-shadow">Typically respond within 2 hours</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4 contact-method p-4 rounded-lg border border-gray-600">
+                                <div class="w-12 h-12 bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-lg flex items-center justify-center animate-float">
+                                    <i data-lucide="phone" class="h-6 w-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-semibold text-shadow">Call Us</h4>
+                                    <p class="text-gray-300 text-shadow">+254 (110) 426-848</p>
+                                    <p class="text-gray-400 text-sm text-shadow">Mon-Fri, 8:00 AM - 6:00 PM EAT</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4 contact-method p-4 rounded-lg border border-gray-600">
+                                <div class="w-12 h-12 bg-gradient-to-r from-green-600 to-green-700 rounded-lg flex items-center justify-center animate-float">
+                                    <i data-lucide="map-pin" class="h-6 w-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-semibold text-shadow">Visit Us</h4>
+                                    <p class="text-gray-300 text-shadow">Nakuru, Kenya</p>
+                                    <p class="text-gray-400 text-sm text-shadow">Schedule a meeting in advance</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Info -->
+                    <div class="cyber-card p-6 rounded-2xl glow">
+                        <h4 class="text-xl font-bold text-white mb-4 text-shadow">Why Choose Jnm Byte?</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center text-gray-300">
+                                <i data-lucide="shield-check" class="h-5 w-5 text-green-400 mr-3"></i>
+                                <span class="text-shadow">Enterprise-grade security solutions</span>
+                            </div>
+                            <div class="flex items-center text-gray-300">
+                                <i data-lucide="zap" class="h-5 w-5 text-yellow-400 mr-3"></i>
+                                <span class="text-shadow">Rapid deployment and implementation</span>
+                            </div>
+                            <div class="flex items-center text-gray-300">
+                                <i data-lucide="users" class="h-5 w-5 text-blue-400 mr-3"></i>
+                                <span class="text-shadow">Dedicated support team</span>
+                            </div>
+                            <div class="flex items-center text-gray-300">
+                                <i data-lucide="award" class="h-5 w-5 text-purple-400 mr-3"></i>
+                                <span class="text-shadow">Proven track record of success</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="cyber-card p-8 rounded-2xl glow">
+                    <h3 class="text-2xl font-bold text-white mb-6 text-shadow">Send us a Secure Message</h3>
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-300 mb-2 text-shadow">Your Name</label>
+                                <input type="text" placeholder="John Doe" 
+                                       class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 form-input focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 outline-none transition-all duration-200">
+                            </div>
+                            <div>
+                                <label class="block text-gray-300 mb-2 text-shadow">Your Email</label>
+                                <input type="email" placeholder="john@company.com" 
+                                       class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 form-input focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 outline-none transition-all duration-200">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-300 mb-2 text-shadow">Company</label>
+                            <input type="text" placeholder="Your Company Name" 
+                                   class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 form-input focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 outline-none transition-all duration-200">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-300 mb-2 text-shadow">Service Interest</label>
+                            <select class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white form-input focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 outline-none transition-all duration-200">
+                                <option value="">Select a service</option>
+                                <option value="cybersecurity">Cybersecurity Solutions</option>
+                                <option value="ai-ml">AI & Machine Learning</option>
+                                <option value="data-engineering">Data Engineering</option>
+                                <option value="consulting">Security Consulting</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-300 mb-2 text-shadow">Your Message</label>
+                            <textarea placeholder="Tell us about your project or security concerns..." rows="5"
+                                      class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 form-input focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 outline-none transition-all duration-200"></textarea>
+                        </div>
+                        
+                        <div class="flex items-center space-x-2">
+                            <input type="checkbox" id="consent" class="w-4 h-4 text-indigo-600 bg-gray-700 border-gray-600 rounded focus:ring-indigo-500">
+                            <label for="consent" class="text-gray-300 text-sm text-shadow">
+                                I agree to the privacy policy and consent to Jnm Byte contacting me about my inquiry.
+                            </label>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full bg-gradient-to-r from-indigo-600 to-cyan-600 text-white py-4 rounded-lg font-semibold text-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 glow flex items-center justify-center space-x-2">
+                            <i data-lucide="send" class="h-5 w-5"></i>
+                            <span>Send Secure Message</span>
+                        </button>
+                        
+                        <p class="text-center text-gray-400 text-sm text-shadow">
+                            <i data-lucide="lock" class="h-4 w-4 inline mr-1"></i>
+                            All communications are encrypted and secure
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Response Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white mb-4 text-shadow">Quick Response <span class="text-gradient">Guarantee</span></h2>
+                <p class="text-gray-300 max-w-2xl mx-auto text-shadow">We understand that security matters can't wait. That's why we guarantee a response within 2 hours during business hours.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="text-center cyber-card p-6 rounded-2xl glow">
+                    <i data-lucide="clock" class="h-12 w-12 text-cyan-400 mx-auto mb-4"></i>
+                    <h4 class="text-lg font-bold text-white mb-2 text-shadow">2-Hour Response</h4>
+                    <p class="text-gray-300 text-sm text-shadow">Initial response guaranteed within 2 business hours</p>
+                </div>
+                <div class="text-center cyber-card p-6 rounded-2xl glow">
+                    <i data-lucide="shield" class="h-12 w-12 text-indigo-400 mx-auto mb-4"></i>
+                    <h4 class="text-lg font-bold text-white mb-2 text-shadow">Secure Communication</h4>
+                    <p class="text-gray-300 text-sm text-shadow">End-to-end encrypted messages and calls</p>
+                </div>
+                <div class="text-center cyber-card p-6 rounded-2xl glow">
+                    <i data-lucide="users" class="h-12 w-12 text-green-400 mx-auto mb-4"></i>
+                    <h4 class="text-lg font-bold text-white mb-2 text-shadow">Expert Team</h4>
+                    <p class="text-gray-300 text-sm text-shadow">Direct access to our cybersecurity specialists</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-gray-900 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400">&copy; 2025 Jnm Byte. All rights reserved. | <span class="text-cyan-400">Securing Your Digital Future</span></p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = mobileMenuButton.querySelector('i');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            const isOpen = mobileMenu.classList.contains('open');
+            
+            // Change icon
+            if (isOpen) {
+                menuIcon.setAttribute('data-lucide', 'x');
+            } else {
+                menuIcon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        });
+
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                menuIcon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            });
+        });
+        
+        // Form submission handling
+        const contactForm = document.querySelector('form');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple form validation
+            const inputs = contactForm.querySelectorAll('input[required], textarea[required]');
+            let isValid = true;
+            
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.classList.add('border-red-500');
+                } else {
+                    input.classList.remove('border-red-500');
+                }
+            });
+            
+            if (isValid) {
+                // Show success message (in a real app, you would send the data to a server)
+                alert('Thank you for your message! We will get back to you within 2 hours.');
+                contactForm.reset();
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        });
+    </script>
+</body>
+</html>

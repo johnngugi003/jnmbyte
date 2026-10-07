@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies - Jnm Byte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        * { 
+            font-family: 'Inter', sans-serif; 
+        }
+        
+        .text-gradient { 
+            background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            background-clip: text; 
+        }
+        
+        .cyber-card { 
+            background: rgba(17, 24, 39, 0.85); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(79, 70, 229, 0.4); 
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .glow { 
+            box-shadow: 0 0 25px rgba(79, 70, 229, 0.3); 
+        }
+        
+        .cyber-card:hover {
+            box-shadow: 0 0 35px rgba(79, 70, 229, 0.5);
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+        
+        /* Background sections with computer science themes */
+        .case-studies-hero-bg {
+            background-image: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.7)), 
+                              url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .case-studies-grid-bg {
+            background-image: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.85)), 
+                              url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .results-bg {
+            background-image: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.85)), 
+                              url('https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .text-shadow-lg {
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+        }
+        
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Case study card enhancements */
+        .case-study-card {
+            transition: all 0.4s ease;
+        }
+        
+        .case-study-card:hover .case-study-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .case-study-icon {
+            transition: all 0.3s ease;
+        }
+        
+        /* Success badge animation */
+        .success-badge {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .success-badge::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(34, 197, 94, 0.2), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+        
+        .case-study-card:hover .success-badge::before {
+            opacity: 1;
+            animation: shine 1.5s ease;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-20 h-19 bg-gradient rounded-lg flex items-center justify-center glow">
+                        <img src="wolf.png" alt="Jnm Byte - Cybersecurity & AI Solutions" class="w-20 h-19 rounded-lg" onclick="window.location.href='index.html'">
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold text-white text-shadow">Jnm Byte</span>
+                        <p class="text-xs text-gray-400 text-shadow">Cybersecurity & Software Solutions</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-indigo-400 font-medium transition-colors duration-200 text-shadow">Home</a>
+                    <a href="about.html" class="text-gray-300 hover:text-indigo-400 font-medium transition-colors duration-200 text-shadow">About</a>
+                    <a href="services.html" class="text-gray-300 hover:text-indigo-400 font-medium transition-colors duration-200 text-shadow">Services</a>
+                    <a href="case-studies.html" class="text-indigo-400 font-medium text-shadow">Case Studies</a>
+                    <a href="careers.html" class="text-gray-300 hover:text-indigo-400 font-medium transition-colors duration-200 text-shadow">Careers</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-indigo-400 font-medium transition-colors duration-200 text-shadow">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden p-2">
+                    <i data-lucide="menu" class="h-6 w-6 text-white"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="mobile-menu md:hidden cyber-card border border-gray-600 mt-4">
+                <div class="px-6 py-4 space-y-4">
+                    <a href="index.html" class="block text-gray-300 hover:text-indigo-400 font-medium py-2 text-shadow">Home</a>
+                    <a href="about.html" class="block text-gray-300 hover:text-indigo-400 font-medium py-2 text-shadow">About</a>
+                    <a href="services.html" class="block text-gray-300 hover:text-indigo-400 font-medium py-2 text-shadow">Services</a>
+                    <a href="case-studies.html" class="block text-indigo-400 font-medium py-2 text-shadow">Case Studies</a>
+                    <a href="careers.html" class="block text-gray-300 hover:text-indigo-400 font-medium py-2 text-shadow">Careers</a>
+                    <a href="contact.html" class="block text-gray-300 hover:text-indigo-400 font-medium py-2 text-shadow">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-40 pb-40 case-studies-hero-bg">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 text-shadow-lg">Case <span class="text-gradient">Studies</span></h1>
+                <p class="text-xl text-gray-200 text-shadow">Real-world solutions delivering measurable results for our clients through advanced software development, cybersecurity and AI implementations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Grid -->
+    <section class="py-20 case-studies-grid-bg">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Financial Institution Security -->
+                <div class="cyber-card p-6 rounded-2xl glow case-study-card">
+                    <div class="bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg p-4 mb-4 case-study-icon animate-float">
+                        <i data-lucide="building" class="h-8 w-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 text-shadow">Financial Institution Security</h3>
+                    <p class="text-gray-200 mb-4 text-shadow">Implemented advanced AI-powered threat detection system that reduced security incidents by 95% while improving response time by 70%.</p>
+                    <div class="space-y-3 mb-4">
+                        <div class="flex items-center text-sm text-gray-300">
+                            <i data-lucide="clock" class="h-4 w-4 text-cyan-400 mr-2"></i>
+                            <span class="text-shadow">6-week implementation</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-300">
+                            <i data-lucide="shield" class="h-4 w-4 text-green-400 mr-2"></i>
+                            <span class="text-shadow">Real-time threat monitoring</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-indigo-400 font-semibold text-shadow hover:text-indigo-300 transition-colors cursor-pointer">Read Detailed Analysis →</span>
+                        <span class="text-green-400 text-sm success-badge px-2 py-1 rounded-full bg-green-900/30 border border-green-700/50">+95% Security</span>
+                    </div>
+                </div>
+
+                <!-- E-commerce AI Optimization -->
+                <div class="cyber-card p-6 rounded-2xl glow case-study-card">
+                    <div class="bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-lg p-4 mb-4 case-study-icon animate-float">
+                        <i data-lucide="shopping-cart" class="h-8 w-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 text-shadow">E-commerce AI Optimization</h3>
+                    <p class="text-gray-200 mb-4 text-shadow">Deployed machine learning recommendation engine that increased sales conversion by 40% and average order value by 25%.</p>
+                    <div class="space-y-3 mb-4">
+                        <div class="flex items-center text-sm text-gray-300">
+                            <i data-lucide="brain" class="h-4 w-4 text-purple-400 mr-2"></i>
+                            <span class="text-shadow">Neural network algorithms</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-300">
+                            <i data-lucide="trending-up" class="h-4 w-4 text-green-400 mr-2"></i>
+                            <span class="text-shadow">Personalized customer experience</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-indigo-400 font-semibold text-shadow hover:text-indigo-300 transition-colors cursor-pointer">Read Detailed Analysis →</span>
+                        <span class="text-green-400 text-sm success-badge px-2 py-1 rounded-full bg-green-900/30 border border-green-700/50">+40% Sales</span>
+                    </div>
+                </div>
+
+                <!-- Healthcare Data Protection -->
+                <div class="cyber-card p-6 rounded-2xl glow case-study-card">
+                    <div class="bg-gradient-to-r from-green-600 to-green-700 rounded-lg p-4 mb-4 case-study-icon animate-float">
+                        <i data-lucide="heart" class="h-8 w-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 text-shadow">Healthcare Data Protection</h3>
+                    <p class="text-gray-200 mb-4 text-shadow">Secured patient data with HIPAA-compliant encryption and access control systems, achieving 100% compliance audit success.</p>
+                    <div class="space-y-3 mb-4">
+                        <div class="flex items-center text-sm text-gray-300">
+                            <i data-lucide="lock" class="h-4 w-4 text-indigo-400 mr-2"></i>
+                            <span class="text-shadow">End-to-end encryption</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-300">
+                            <i data-lucide="check-circle" class="h-4 w-4 text-green-400 mr-2"></i>
+                            <span class="text-shadow">Zero data breaches</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-indigo-400 font-semibold text-shadow hover:text-indigo-300 transition-colors cursor-pointer">Read Detailed Analysis →</span>
+                        <span class="text-green-400 text-sm success-badge px-2 py-1 rounded-full bg-green-900/30 border border-green-700/50">100% Compliance</span>
+                    </div>
+                </div>
+
+                <!-- Additional Case Studies -->
+                <div class="cyber-card p-6 rounded-2xl glow case-study-card">
+                    <div class="bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg p-4 mb-4 case-study-icon animate-float">
+                        <i data-lucide="cloud" class="h-8 w-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 text-shadow">Cloud Infrastructure Security</h3>
+                    <p class="text-gray-200 mb-4 text-shadow">Migrated enterprise infrastructure to secure cloud environment with 99.99% uptime and 60% cost reduction.</p>
+                    <div class="space-y-3 mb-4">
+                        <div class="flex items-center text-sm text-gray-300">
+                            <i data-lucide="server" class="h-4 w-4 text-cyan-400 mr-2"></i>
+                            <span class="text-shadow">Multi-cloud architecture</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-300">
+                            <i data-lucide="dollar-sign" class="h-4 w-4 text-green-400 mr-2"></i>
+                            <span class="text-shadow">60% cost optimization</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-indigo-400 font-semibold text-shadow hover:text-indigo-300 transition-colors cursor-pointer">Read Detailed Analysis →</span>
+                        <span class="text-green-400 text-sm success-badge px-2 py-1 rounded-full bg-green-900/30 border border-green-700/50">99.99% Uptime</span>
+                    </div>
+                </div>
+
+                <div class="cyber-card p-6 rounded-2xl glow case-study-card">
+                    <div class="bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg p-4 mb-4 case-study-icon animate-float">
+                        <i data-lucide="bot" class="h-8 w-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 text-shadow">AI-Powered Automation</h3>
+                    <p class="text-gray-200 mb-4 text-shadow">Implemented intelligent process automation that reduced manual workload by 75% and improved accuracy to 99.8%.</p>
+                    <div class="space-y-3 mb-4">
+                        <div class="flex items-center text-sm text-gray-300">
+                            <i data-lucide="zap" class="h-4 w-4 text-yellow-400 mr-2"></i>
+                            <span class="text-shadow">RPA + Machine Learning</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-300">
+                            <i data-lucide="target" class="h-4 w-4 text-green-400 mr-2"></i>
+                            <span class="text-shadow">99.8% accuracy rate</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-indigo-400 font-semibold text-shadow hover:text-indigo-300 transition-colors cursor-pointer">Read Detailed Analysis →</span>
+                        <span class="text-green-400 text-sm success-badge px-2 py-1 rounded-full bg-green-900/30 border border-green-700/50">75% Efficiency</span>
+                    </div>
+                </div>
+
+                <div class="cyber-card p-6 rounded-2xl glow case-study-card">
+                    <div class="bg-gradient-to-r from-red-600 to-red-700 rounded-lg p-4 mb-4 case-study-icon animate-float">
+                        <i data-lucide="shield-alert" class="h-8 w-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 text-shadow">Threat Intelligence Platform</h3>
+                    <p class="text-gray-200 mb-4 text-shadow">Developed custom threat intelligence system that identified and neutralized 98% of zero-day attacks before impact.</p>
+                    <div class="space-y-3 mb-4">
+                        <div class="flex items-center text-sm text-gray-300">
+                            <i data-lucide="eye" class="h-4 w-4 text-red-400 mr-2"></i>
+                            <span class="text-shadow">Real-time threat detection</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-300">
+                            <i data-lucide="alert-triangle" class="h-4 w-4 text-orange-400 mr-2"></i>
+                            <span class="text-shadow">Zero-day protection</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-indigo-400 font-semibold text-shadow hover:text-indigo-300 transition-colors cursor-pointer">Read Detailed Analysis →</span>
+                        <span class="text-green-400 text-sm success-badge px-2 py-1 rounded-full bg-green-900/30 border border-green-700/50">98% Prevention</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Summary -->
+    <section class="py-20 results-bg">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4 text-shadow-lg">Proven <span class="text-gradient">Results</span></h2>
+                <p class="text-xl text-gray-200 max-w-2xl mx-auto text-shadow">Our solutions consistently deliver exceptional outcomes across industries</p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="cyber-card p-6 rounded-2xl glow text-center">
+                    <div class="text-3xl font-bold text-indigo-400 mb-2">95%</div>
+                    <div class="text-gray-300 text-shadow">Threat Reduction</div>
+                </div>
+                <div class="cyber-card p-6 rounded-2xl glow text-center">
+                    <div class="text-3xl font-bold text-cyan-400 mb-2">40%</div>
+                    <div class="text-gray-300 text-shadow">Revenue Growth</div>
+                </div>
+                <div class="cyber-card p-6 rounded-2xl glow text-center">
+                    <div class="text-3xl font-bold text-green-400 mb-2">100%</div>
+                    <div class="text-gray-300 text-shadow">Compliance Success</div>
+                </div>
+                <div class="cyber-card p-6 rounded-2xl glow text-center">
+                    <div class="text-3xl font-bold text-purple-400 mb-2">75%</div>
+                    <div class="text-gray-300 text-shadow">Efficiency Gain</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-gray-900 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400">&copy; 2025 Jnm Byte. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = mobileMenuButton.querySelector('i');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            const isOpen = mobileMenu.classList.contains('open');
+            
+            // Change icon
+            if (isOpen) {
+                menuIcon.setAttribute('data-lucide', 'x');
+            } else {
+                menuIcon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        });
+
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                menuIcon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            });
+        });
+    </script>
+</body>
+</html>

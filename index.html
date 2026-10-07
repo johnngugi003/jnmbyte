@@ -1,0 +1,661 @@
+=<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jnm Byte - Enterprise Cybersecurity & AI Solutions</title>
+    <meta name="description" content="Jnm Byte provides enterprise-grade cybersecurity, artificial intelligence, and data engineering solutions. Protect your digital assets with cutting-edge technology.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900">
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-20 h-19 bg-gradient rounded-lg flex items-center justify-center glow">
+                        <img src="wolf.png" alt="Jnm Byte - Cybersecurity & AI Solutions" class="w-20 h-19 rounded-lg" onclick="window.location.href='index.html'">
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold text-white text-shadow">Jnm Byte</span>
+                        <p class="text-xs text-gray-400 text-shadow">Cybersecurity & Software Solutions</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-gray-300 hover:text-indigo-400 font-medium transition-colors duration-200 text-shadow">Services</a>
+                    <a href="#why-us" class="text-gray-300 hover:text-indigo-400 font-medium transition-colors duration-200 text-shadow">Why Us</a>
+                    <a href="#team" class="text-gray-300 hover:text-indigo-400 font-medium transition-colors duration-200 text-shadow">Technologies</a>
+                    <a href="about.html" class="text-gray-300 hover:text-indigo-400 font-medium transition-colors duration-200 text-shadow">About</a>
+                    <a href="case-studies.html" class="text-gray-300 hover:text-indigo-400 font-medium transition-colors duration-200 text-shadow">Case Studies</a>
+                    <a href="services.html" class="text-gray-300 hover:text-indigo-400 font-medium transition-colors duration-200 text-shadow">Services</a>
+                    <a href="careers.html" class="text-gray-300 hover:text-indigo-400 font-medium transition-colors duration-200 text-shadow">Careers</a>
+                    <a href="contact.html" class="bg-gradient-to-r from-indigo-600 to-cyan-600 text-white px-4 py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 text-shadow">
+                        Get Started
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden p-2">
+                    <i data-lucide="menu" class="h-6 w-6 text-white"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="mobile-menu md:hidden cyber-card border border-gray-600">
+                <div class="px-6 py-4 space-y-4">
+                    <a href="#services" class="block text-gray-300 hover:text-indigo-400 font-medium py-2 text-shadow">Services</a>
+                    <a href="#why-us" class="block text-gray-300 hover:text-indigo-400 font-medium py-2 text-shadow">Why Us</a>
+                    <a href="#team" class="block text-gray-300 hover:text-indigo-400 font-medium py-2 text-shadow">Leadership</a>
+                    <a href="about.html" class="block text-gray-300 hover:text-indigo-400 font-medium py-2 text-shadow">About</a>
+                    <a href="case-studies.html" class="block text-gray-300 hover:text-indigo-400 font-medium py-2 text-shadow">Case Studies</a>
+                    <a href="services.html" class="text-gray-300 hover:text-indigo-400 font-medium transition-colors duration-200 text-shadow">Services</a>
+                    <a href="careers.html" class="block text-gray-300 hover:text-indigo-400 font-medium py-2 text-shadow">Careers</a>
+                    <a href="contact.html" class="block bg-gradient-to-r from-indigo-600 to-cyan-600 text-white py-2 rounded-lg font-semibold text-center">Get Started</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 section-bg hero-bg">
+        <!-- Binary Rain Animation -->
+        <div id="binary-rain-container" class="absolute inset-0 overflow-hidden pointer-events-none"></div>
+
+        <!-- Floating Cyber Elements -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute left-10 top-1/4 w-20 h-20 rounded-full animate-float">
+                <i data-lucide="shield" class="absolute inset-0 m-auto text-indigo-400/30 w-10 h-10"></i>
+            </div>
+            
+            <div class="absolute right-20 top-1/3 w-16 h-16 rounded-full animate-float" style="animation-delay: -2s;">
+                <i data-lucide="lock" class="absolute inset-0 m-auto text-cyan-400/30 w-8 h-8"></i>
+            </div>
+            
+            <div class="absolute left-1/3 bottom-1/4 w-12 h-12 rounded-full animate-float" style="animation-delay: -1s;">
+                <i data-lucide="brain" class="absolute inset-0 m-auto text-indigo-400/30 w-6 h-6"></i>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-6 py-20 section-content">
+            <div class="text-center max-w-6xl mx-auto">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 bg-indigo-900/40 border border-indigo-600 rounded-full px-4 py-2 mb-8 fade-in glow">
+                    <i data-lucide="shield-check" class="h-4 w-4 text-indigo-300 fill-current"></i>
+                    <span class="text-sm font-medium text-indigo-200 text-shadow">Enterprise-Grade Security & Software Solutions</span>
+                </div>
+
+                <!-- Main Heading -->
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight fade-in text-shadow-lg">
+                    Global Computing & Technology Solutions<br>
+                    <span class="text-gradient">Powered by JnmByte</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="text-xl md:text-2xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed fade-in text-shadow">
+                    Enterprise-grade cybersecurity, Software Development, Networking, artificial intelligence, and data engineering solutions trusted by organizations worldwide.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 fade-in">
+                    <a href="contact.html" class="bg-gradient text-white px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 glow professional-card">
+                        Start Your Security Assessment
+                        <i data-lucide="arrow-right" class="h-5 w-5"></i>
+                    </a>
+                    
+                    <a href="#services" class="border border-gray-500 text-gray-200 px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 hover:border-indigo-500 hover:text-indigo-300 transition-all duration-300 transform hover:scale-105 text-shadow professional-card">
+                        <i data-lucide="play" class="h-5 w-5"></i>
+                        View Solutions
+                    </a>
+                </div>
+
+                <!-- Global Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-2xl mx-auto fade-in">
+                    <div class="text-center cyber-card p-4 rounded-xl glow professional-card">
+                        <div class="text-2xl md:text-3xl font-bold text-white mb-1 text-shadow">99.9%</div>
+                        <div class="text-sm text-gray-300 font-medium text-shadow">Uptime SLA</div>
+                    </div>
+                    <div class="text-center cyber-card p-4 rounded-xl glow professional-card">
+                        <div class="text-2xl md:text-3xl font-bold text-white mb-1 text-shadow">0</div>
+                        <div class="text-sm text-gray-300 font-medium text-shadow">Major Breaches</div>
+                    </div>
+                    <div class="text-center cyber-card p-4 rounded-xl glow professional-card">
+                        <div class="text-2xl md:text-3xl font-bold text-white mb-1 text-shadow">10+</div>
+                        <div class="text-sm text-gray-300 font-medium text-shadow">Countries Served</div>
+                    </div>
+                    <div class="text-center cyber-card p-4 rounded-xl glow professional-card">
+                        <div class="text-2xl md:text-3xl font-bold text-white mb-1 text-shadow">24/7</div>
+                        <div class="text-sm text-gray-300 font-medium text-shadow">Global Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 section-bg services-bg">
+        <div class="container mx-auto px-6 section-content">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 text-shadow-lg">
+                    Enterprise <span class="text-gradient">Solutions</span>
+                </h2>
+                <p class="text-xl text-gray-200 max-w-2xl mx-auto text-shadow">
+                    Comprehensive cybersecurity and Software solutions designed for global enterprise requirements.
+                </p>
+            </div>
+
+            <!-- Services Horizontal Scroll Container -->
+            <div class="relative">
+                <div class="services-scroll-container" id="servicesScroll">
+                    <!-- Cybersecurity Service -->
+                    <div class="service-card gradient-border professional-card fade-in">
+                        <div class="cyber-card rounded-2xl p-8 h-full">
+                            <div class="flex flex-col h-full">
+                                <div class="mb-6">
+                                    <div class="w-14 h-14 bg-gradient rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                        <i data-lucide="shield" class="h-7 w-7 text-white"></i>
+                                    </div>
+                                </div>
+
+                                <h3 class="text-xl font-bold text-white mb-3 text-shadow">
+                                    Enterprise Cybersecurity
+                                </h3>
+                                
+                                <p class="text-gray-200 mb-6 flex-grow text-shadow">
+                                    Advanced threat protection, compliance management, and 24/7 security operations for global enterprises.
+                                </p>
+
+                                <ul class="space-y-2 mb-6">
+                                    <li class="flex items-center text-sm text-gray-300 text-shadow">
+                                        <i data-lucide="check" class="h-4 w-4 text-green-400 mr-3"></i>
+                                        Threat Intelligence & Monitoring
+                                    </li>
+                                    <li class="flex items-center text-sm text-gray-300 text-shadow">
+                                        <i data-lucide="check" class="h-4 w-4 text-green-400 mr-3"></i>
+                                        Compliance & Governance
+                                    </li>
+                                    <li class="flex items-center text-sm text-gray-300 text-shadow">
+                                        <i data-lucide="check" class="h-4 w-4 text-green-400 mr-3"></i>
+                                        Security Operations Center
+                                    </li>
+                                </ul>
+
+                                <a href="services.html" class="flex items-center gap-2 text-indigo-400 font-semibold mt-auto group/btn hover:gap-3 transition-all duration-300 text-shadow">
+                                    Explore Cybersecurity
+                                    <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI & Machine Learning Service -->
+                    <div class="service-card gradient-border professional-card fade-in">
+                        <div class="cyber-card rounded-2xl p-8 h-full">
+                            <div class="flex flex-col h-full">
+                                <div class="mb-6">
+                                    <div class="w-14 h-14 bg-gradient rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                        <i data-lucide="brain" class="h-7 w-7 text-white"></i>
+                                    </div>
+                                </div>
+
+                                <h3 class="text-xl font-bold text-white mb-3 text-shadow">
+                                    AI & Machine Learning
+                                </h3>
+                                
+                                <p class="text-gray-200 mb-6 flex-grow text-shadow">
+                                    Custom AI solutions, predictive analytics, and intelligent automation for business transformation.
+                                </p>
+
+                                <ul class="space-y-2 mb-6">
+                                    <li class="flex items-center text-sm text-gray-300 text-shadow">
+                                        <i data-lucide="check" class="h-4 w-4 text-green-400 mr-3"></i>
+                                        Predictive Analytics
+                                    </li>
+                                    <li class="flex items-center text-sm text-gray-300 text-shadow">
+                                        <i data-lucide="check" class="h-4 w-4 text-green-400 mr-3"></i>
+                                        Computer Vision Solutions
+                                    </li>
+                                    <li class="flex items-center text-sm text-gray-300 text-shadow">
+                                        <i data-lucide="check" class="h-4 w-4 text-green-400 mr-3"></i>
+                                        AI-Powered Automation
+                                    </li>
+                                </ul>
+
+                                <a href="services.html" class="flex items-center gap-2 text-indigo-400 font-semibold mt-auto group/btn hover:gap-3 transition-all duration-300 text-shadow">
+                                    Explore AI Solutions
+                                    <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Engineering Service -->
+                    <div class="service-card gradient-border professional-card fade-in">
+                        <div class="cyber-card rounded-2xl p-8 h-full">
+                            <div class="flex flex-col h-full">
+                                <div class="mb-6">
+                                    <div class="w-14 h-14 bg-gradient rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                        <i data-lucide="database" class="h-7 w-7 text-white"></i>
+                                    </div>
+                                </div>
+
+                                <h3 class="text-xl font-bold text-white mb-3 text-shadow">
+                                    Data Engineering
+                                </h3>
+                                
+                                <p class="text-gray-200 mb-6 flex-grow text-shadow">
+                                    Secure data infrastructure, real-time analytics, and scalable data pipelines for enterprise needs.
+                                </p>
+
+                                <ul class="space-y-2 mb-6">
+                                    <li class="flex items-center text-sm text-gray-300 text-shadow">
+                                        <i data-lucide="check" class="h-4 w-4 text-green-400 mr-3"></i>
+                                        Data Pipeline Architecture
+                                    </li>
+                                    <li class="flex items-center text-sm text-gray-300 text-shadow">
+                                        <i data-lucide="check" class="h-4 w-4 text-green-400 mr-3"></i>
+                                        Real-time Analytics
+                                    </li>
+                                    <li class="flex items-center text-sm text-gray-300 text-shadow">
+                                        <i data-lucide="check" class="h-4 w-4 text-green-400 mr-3"></i>
+                                        Data Governance & Security
+                                    </li>
+                                </ul>
+
+                                <a href="services.html" class="flex items-center gap-2 text-indigo-400 font-semibold mt-auto group/btn hover:gap-3 transition-all duration-300 text-shadow">
+                                    Explore Data Solutions
+                                    <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Software Development Service -->
+                    <div class="service-card gradient-border professional-card fade-in">
+                        <div class="cyber-card rounded-2xl p-8 h-full">
+                            <div class="flex flex-col h-full">
+                                <div class="mb-6">
+                                    <div class="w-14 h-14 bg-gradient-to-r from-purple-600 to-purple-700 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                        <i data-lucide="code" class="h-7 w-7 text-white"></i>
+                                    </div>
+                                </div>
+
+                                <h3 class="text-xl font-bold text-white mb-3 text-shadow">
+                                    Software Development
+                                </h3>
+                                
+                                <p class="text-gray-200 mb-6 flex-grow text-shadow">
+                                    Custom software solutions, enterprise applications, and scalable digital platforms with security-first approach.
+                                </p>
+
+                                <ul class="space-y-2 mb-6">
+                                    <li class="flex items-center text-sm text-gray-300 text-shadow">
+                                        <i data-lucide="check" class="h-4 w-4 text-green-400 mr-3"></i>
+                                        Full-Stack Development
+                                    </li>
+                                    <li class="flex items-center text-sm text-gray-300 text-shadow">
+                                        <i data-lucide="check" class="h-4 w-4 text-green-400 mr-3"></i>
+                                        Cloud-Native Applications
+                                    </li>
+                                    <li class="flex items-center text-sm text-gray-300 text-shadow">
+                                        <i data-lucide="check" class="h-4 w-4 text-green-400 mr-3"></i>
+                                        DevOps & CI/CD Pipelines
+                                    </li>
+                                </ul>
+
+                                <a href="services.html" class="flex items-center gap-2 text-indigo-400 font-semibold mt-auto group/btn hover:gap-3 transition-all duration-300 text-shadow">
+                                    Explore Development
+                                    <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Networking Service -->
+                    <div class="service-card gradient-border professional-card fade-in">
+                        <div class="cyber-card rounded-2xl p-8 h-full">
+                            <div class="flex flex-col h-full">
+                                <div class="mb-6">
+                                    <div class="w-14 h-14 bg-gradient-to-r from-orange-600 to-orange-700 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                        <i data-lucide="network" class="h-7 w-7 text-white"></i>
+                                    </div>
+                                </div>
+
+                                <h3 class="text-xl font-bold text-white mb-3 text-shadow">
+                                    Enterprise Networking
+                                </h3>
+                                
+                                <p class="text-gray-200 mb-6 flex-grow text-shadow">
+                                    Secure network infrastructure, cloud connectivity, and enterprise-grade networking solutions for global operations.
+                                </p>
+
+                                <ul class="space-y-2 mb-6">
+                                    <li class="flex items-center text-sm text-gray-300 text-shadow">
+                                        <i data-lucide="check" class="h-4 w-4 text-green-400 mr-3"></i>
+                                        Network Security & Architecture
+                                    </li>
+                                    <li class="flex items-center text-sm text-gray-300 text-shadow">
+                                        <i data-lucide="check" class="h-4 w-4 text-green-400 mr-3"></i>
+                                        Cloud Networking & VPN
+                                    </li>
+                                    <li class="flex items-center text-sm text-gray-300 text-shadow">
+                                        <i data-lucide="check" class="h-4 w-4 text-green-400 mr-3"></i>
+                                        SD-WAN & Zero Trust
+                                    </li>
+                                </ul>
+
+                                <a href="services.html" class="flex items-center gap-2 text-indigo-400 font-semibold mt-auto group/btn hover:gap-3 transition-all duration-300 text-shadow">
+                                    Explore Networking
+                                    <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cloud Solutions Service -->
+                    <div class="service-card gradient-border professional-card fade-in">
+                        <div class="cyber-card rounded-2xl p-8 h-full">
+                            <div class="flex flex-col h-full">
+                                <div class="mb-6">
+                                    <div class="w-14 h-14 bg-gradient-to-r from-cyan-600 to-blue-700 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                        <i data-lucide="cloud" class="h-7 w-7 text-white"></i>
+                                    </div>
+                                </div>
+
+                                <h3 class="text-xl font-bold text-white mb-3 text-shadow">
+                                    Cloud Solutions
+                                </h3>
+                                
+                                <p class="text-gray-200 mb-6 flex-grow text-shadow">
+                                    Multi-cloud strategy, migration services, and cloud security management for enterprise digital transformation.
+                                </p>
+
+                                <ul class="space-y-2 mb-6">
+                                    <li class="flex items-center text-sm text-gray-300 text-shadow">
+                                        <i data-lucide="check" class="h-4 w-4 text-green-400 mr-3"></i>
+                                        Cloud Migration & Strategy
+                                    </li>
+                                    <li class="flex items-center text-sm text-gray-300 text-shadow">
+                                        <i data-lucide="check" class="h-4 w-4 text-green-400 mr-3"></i>
+                                        Multi-Cloud Management
+                                    </li>
+                                    <li class="flex items-center text-sm text-gray-300 text-shadow">
+                                        <i data-lucide="check" class="h-4 w-4 text-green-400 mr-3"></i>
+                                        Cloud Security & Compliance
+                                    </li>
+                                </ul>
+
+                                <a href="services.html" class="flex items-center gap-2 text-indigo-400 font-semibold mt-auto group/btn hover:gap-3 transition-all duration-300 text-shadow">
+                                    Explore Cloud
+                                    <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scroll Controls -->
+                <div class="services-scroll-controls">
+                    <button class="services-scroll-btn" id="servicesScrollLeft">
+                        <i data-lucide="chevron-left" class="h-5 w-5"></i>
+                    </button>
+                    <button class="services-scroll-btn" id="servicesScrollRight">
+                        <i data-lucide="chevron-right" class="h-5 w-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="py-20 section-bg why-us-bg">
+        <div class="container mx-auto px-6 section-content">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 text-shadow-lg">
+                    Why Global Enterprises <span class="text-gradient">Choose Us</span>
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center cyber-card p-6 rounded-2xl border border-gray-600 glow professional-card fade-in">
+                    <div class="w-16 h-16 bg-gradient rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="globe" class="h-8 w-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 text-shadow">Global Delivery</h3>
+                    <p class="text-gray-200 text-shadow">24/7 support across multiple time zones with local compliance expertise.</p>
+                </div>
+
+                <div class="text-center cyber-card p-6 rounded-2xl border border-gray-600 glow professional-card fade-in">
+                    <div class="w-16 h-16 bg-gradient rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="award" class="h-8 w-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 text-shadow">Enterprise Grade</h3>
+                    <p class="text-gray-200 text-shadow">Solutions designed for Fortune 500 security and scalability requirements.</p>
+                </div>
+
+                <div class="text-center cyber-card p-6 rounded-2xl border border-gray-600 glow professional-card fade-in">
+                    <div class="w-16 h-16 bg-gradient rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="zap" class="h-8 w-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 text-shadow">Jnm</h3>
+                    <p class="text-gray-200 text-shadow">Cutting-edge machine learning algorithms for proactive threat detection.</p>
+                </div>
+
+                <div class="text-center cyber-card p-6 rounded-2xl border border-gray-600 glow professional-card fade-in">
+                    <div class="w-16 h-16 bg-gradient rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="shield" class="h-8 w-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 text-shadow">Zero Trust</h3>
+                    <p class="text-gray-200 text-shadow">Comprehensive security framework following zero-trust architecture principles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Trusted Technologies Section -->
+<section id="team" class="py-20 section-bg">
+    <div class="container mx-auto px-6 section-content">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 text-shadow-lg">
+                Trusted <span class="text-gradient">Technologies</span>
+            </h2>
+            <p class="text-xl text-gray-200 max-w-2xl mx-auto text-shadow">
+                The platforms, frameworks, and tools powering our enterprise solutions.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="cyber-card p-6 rounded-2xl border border-gray-600 glow professional-card fade-in">
+                <div class="w-14 h-14 bg-gradient rounded-xl flex items-center justify-center mb-5">
+                    <i data-lucide="shield-check" class="h-7 w-7 text-white"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-4 text-shadow">Security Stack</h3>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li class="text-shadow">CrowdStrike · Splunk</li>
+                    <li class="text-shadow">Fortinet · Palo Alto</li>
+                    <li class="text-shadow">Burp Suite · Metasploit</li>
+                    <li class="text-shadow">Wireshark · Nmap</li>
+                </ul>
+            </div>
+
+            <div class="cyber-card p-6 rounded-2xl border border-gray-600 glow professional-card fade-in">
+                <div class="w-14 h-14 bg-gradient rounded-xl flex items-center justify-center mb-5">
+                    <i data-lucide="cloud" class="h-7 w-7 text-white"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-4 text-shadow">Cloud & Infra</h3>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li class="text-shadow">AWS · Azure · GCP</li>
+                    <li class="text-shadow">Kubernetes · Docker</li>
+                    <li class="text-shadow">Terraform · Ansible</li>
+                    <li class="text-shadow">Cloudflare · Akamai</li>
+                </ul>
+            </div>
+
+            <div class="cyber-card p-6 rounded-2xl border border-gray-600 glow professional-card fade-in">
+                <div class="w-14 h-14 bg-gradient rounded-xl flex items-center justify-center mb-5">
+                    <i data-lucide="brain" class="h-7 w-7 text-white"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-4 text-shadow">AI & Data</h3>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li class="text-shadow">PyTorch · TensorFlow</li>
+                    <li class="text-shadow">Apache Spark · Kafka</li>
+                    <li class="text-shadow">PostgreSQL · MongoDB</li>
+                    <li class="text-shadow">Snowflake · dbt</li>
+                </ul>
+            </div>
+
+            <div class="cyber-card p-6 rounded-2xl border border-gray-600 glow professional-card fade-in">
+                <div class="w-14 h-14 bg-gradient rounded-xl flex items-center justify-center mb-5">
+                    <i data-lucide="code" class="h-7 w-7 text-white"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-4 text-shadow">Development</h3>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li class="text-shadow">TypeScript · Python · Go</li>
+                    <li class="text-shadow">React · Next.js · Astro</li>
+                    <li class="text-shadow">Node.js · FastAPI</li>
+                    <li class="text-shadow">GitHub Actions · GitLab CI</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Profile Modal -->
+    <div id="profileModal" class="profile-modal">
+        <div class="profile-modal-content relative">
+            <button class="profile-modal-close" onclick="closeProfile()">
+                <i data-lucide="x" class="h-5 w-5"></i>
+            </button>
+            <div class="p-8">
+                <div id="modalContent">
+                    <!-- Content will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Global Contact Section -->
+    <section id="contact" class="py-20 section-bg contact-bg">
+        <div class="container mx-auto px-6 section-content">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 text-shadow-lg">
+                    Global <span class="text-gradient">Partnership</span>
+                </h2>
+                <p class="text-xl text-gray-200 max-w-2xl mx-auto text-shadow">
+                    Ready to secure your enterprise? Connect with our global team for a comprehensive security assessment.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto gradient-border professional-card fade-in">
+                <div class="cyber-card rounded-2xl p-8">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-6 text-shadow">Global Presence</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center space-x-4">
+                                    <i data-lucide="mail" class="h-6 w-6 text-indigo-400"></i>
+                                    <span class="text-gray-200 text-shadow">contact@jnmbyte.com</span>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <i data-lucide="phone" class="h-6 w-6 text-cyan-400"></i>
+                                    <span class="text-gray-200 text-shadow">+254 (110) 426-848</span>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <i data-lucide="map-pin" class="h-6 w-6 text-green-400"></i>
+                                    <span class="text-gray-200 text-shadow">Nakuru, Kenya (HQ)</span>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <i data-lucide="globe" class="h-6 w-6 text-purple-400"></i>
+                                    <span class="text-gray-200 text-shadow">Serving 50+ Countries Worldwide</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-6 text-shadow">Enterprise Inquiry</h3>
+                            <form class="space-y-4">
+                                <input type="text" placeholder="Full Name" 
+                                       class="w-full px-4 py-3 bg-gray-800/70 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 outline-none transition-all duration-200">
+                                <input type="email" placeholder="Business Email" 
+                                       class="w-full px-4 py-3 bg-gray-800/70 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 outline-none transition-all duration-200">
+                                <input type="text" placeholder="Company Name" 
+                                       class="w-full px-4 py-3 bg-gray-800/70 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 outline-none transition-all duration-200">
+                                <textarea rows="4" placeholder="Enterprise Requirements" 
+                                          class="w-full px-4 py-3 bg-gray-800/70 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 outline-none transition-all duration-200"></textarea>
+                                <button type="submit" class="w-full bg-gradient text-white py-3 rounded-lg font-semibold text-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 glow">
+                                    Request Enterprise Consultation
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <!-- Global Footer -->
+    <footer class="py-16 section-bg footer-bg border-t border-gray-700">
+        <div class="container mx-auto px-6 section-content">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-6">
+                        <i data-lucide="shield" class="h-8 w-8 text-indigo-400"></i>
+                        <div>
+                            <span class="text-xl font-bold text-white text-shadow">Jnm Byte</span>
+                            <p class="text-xs text-gray-400 text-shadow">Global Cybersecurity & Software Solutions</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md text-shadow">
+                        Enterprise-grade cybersecurity, software development, artificial intelligence, and data engineering solutions trusted by organizations worldwide.
+                    </p>
+                    <div class="flex space-x-4">
+                        <div class="flex items-center space-x-2 text-gray-400 text-shadow">
+                            <i data-lucide="globe" class="h-4 w-4"></i>
+                            <span>Global Delivery • 24/7 Support</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-6 text-white text-shadow">Solutions</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="services.html" class="hover:text-indigo-400 transition-colors text-shadow">Cybersecurity</a></li>
+                        <li><a href="services.html" class="hover:text-indigo-400 transition-colors text-shadow">Software Development</a></li>                        
+                        <li><a href="services.html" class="hover:text-indigo-400 transition-colors text-shadow">AI & Machine Learning</a></li>
+                        <li><a href="services.html" class="hover:text-indigo-400 transition-colors text-shadow">Data Engineering</a></li>
+                        <li><a href="services.html" class="hover:text-indigo-400 transition-colors text-shadow">Cloud Security</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-6 text-white text-shadow">Global Contact</h3>
+                    <div class="space-y-3 text-gray-300">
+                        <div class="flex items-center space-x-2 text-shadow">
+                            <i data-lucide="phone" class="h-4 w-4"></i>
+                            <span>+254 (110) 426-848</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-shadow">
+                            <i data-lucide="mail" class="h-4 w-4"></i>
+                            <span>contact@jnmbyte.com</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-shadow">
+                            <i data-lucide="map-pin" class="h-4 w-4"></i>
+                            <span>Nakuru, Kenya</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-600 mt-12 pt-8 text-center text-gray-400 text-shadow">
+                <p>&copy; 2025 Jnm Byte. All rights reserved. | <span class="text-cyan-400">Securing Digital Futures Worldwide</span></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
