@@ -1,0 +1,371 @@
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .bg-gradient {
+            background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+
+        /* Section Background Styles */
+        .section-bg {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        .section-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.65);
+            z-index: 1;
+        }
+        
+        .section-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Horizontal Scroll Styles */
+        .team-scroll-container {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px 10px;
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(79, 70, 229, 0.6) rgba(17, 24, 39, 0.3);
+            gap: 24px;
+            -ms-overflow-style: none;
+        }
+
+        .team-scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .team-scroll-container::-webkit-scrollbar-track {
+            background: rgba(17, 24, 39, 0.3);
+            border-radius: 10px;
+            margin: 0 10px;
+        }
+
+        .team-scroll-container::-webkit-scrollbar-thumb {
+            background: rgba(79, 70, 229, 0.6);
+            border-radius: 10px;
+        }
+
+        .team-scroll-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(79, 70, 229, 0.8);
+        }
+
+        .team-card {
+            flex: 0 0 auto;
+            width: 320px;
+        }
+
+        .scroll-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 24px;
+            gap: 12px;
+        }
+
+        .scroll-btn {
+            background: rgba(79, 70, 229, 0.2);
+            border: 1px solid rgba(79, 70, 229, 0.4);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .scroll-btn:hover {
+            background: rgba(79, 70, 229, 0.4);
+            transform: scale(1.05);
+        }
+
+        .scroll-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Services Horizontal Scroll Styles */
+        .services-scroll-container {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px 10px;
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(79, 70, 229, 0.6) rgba(17, 24, 39, 0.3);
+            gap: 24px;
+            -ms-overflow-style: none;
+        }
+
+        .services-scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .services-scroll-container::-webkit-scrollbar-track {
+            background: rgba(17, 24, 39, 0.3);
+            border-radius: 10px;
+            margin: 0 10px;
+        }
+
+        .services-scroll-container::-webkit-scrollbar-thumb {
+            background: rgba(79, 70, 229, 0.6);
+            border-radius: 10px;
+        }
+
+        .services-scroll-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(79, 70, 229, 0.8);
+        }
+
+        .service-card {
+            flex: 0 0 auto;
+            width: 380px;
+        }
+
+        .services-scroll-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 24px;
+            gap: 12px;
+        }
+
+        .services-scroll-btn {
+            background: rgba(79, 70, 229, 0.2);
+            border: 1px solid rgba(79, 70, 229, 0.4);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .services-scroll-btn:hover {
+            background: rgba(79, 70, 229, 0.4);
+            transform: scale(1.05);
+        }
+
+        .services-scroll-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Background Images - High quality tech themes */
+        .hero-bg {
+            background-image: url('');
+        }
+
+        .services-bg {
+            background-image: url('https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+        }
+
+        .why-us-bg {
+            background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+        }
+
+        .team-bg {
+            background-image: url('https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+        }
+
+        .contact-bg {
+            background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80');
+        }
+
+        .footer-bg {
+            background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+        }
+
+        /* Cyber Elements */
+        .cyber-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(79, 70, 229, 0.4);
+        }
+
+        .cyber-grid {
+            background-image: 
+                linear-gradient(rgba(79, 70, 229, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(79, 70, 229, 0.08) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        /* Binary rain animation */
+        .binary-rain {
+            position: absolute;
+            font-family: monospace;
+            color: rgba(79, 70, 229, 0.3);
+            animation: binaryFall 8s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes binaryFall {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        /* Glow effects */
+        .glow {
+            box-shadow: 0 0 20px rgba(79, 70, 229, 0.2);
+        }
+
+        .glow:hover {
+            box-shadow: 0 0 30px rgba(79, 70, 229, 0.4);
+        }
+
+        /* Text shadow for better readability */
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .text-shadow-lg {
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Professional enhancements */
+        .professional-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .professional-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(79, 70, 229, 0.25);
+        }
+
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.9));
+            padding: 1px;
+            border-radius: 1rem;
+        }
+
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 1rem;
+            padding: 1px;
+            background: linear-gradient(135deg, #4f46e5, #06b6d4);
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        /* Profile Modal Styles */
+        .profile-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .profile-modal.active {
+            display: flex;
+        }
+
+        .profile-modal-content {
+            background: rgba(17, 24, 39, 0.95);
+            border: 1px solid rgba(79, 70, 229, 0.4);
+            border-radius: 1.5rem;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .profile-modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(79, 70, 229, 0.2);
+            border: 1px solid rgba(79, 70, 229, 0.4);
+            color: white;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .profile-modal-close:hover {
+            background: rgba(79, 70, 229, 0.4);
+            transform: scale(1.1);
+        }
